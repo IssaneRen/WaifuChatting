@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/ic_tab_discover"
+        android:contentDescription="main" />
+
+    <!--预留右上角红点-->
+    <View
+        android:id="@+id/icon_top_right"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignTop="@id/iv_icon"
+        android:layout_marginStart="-5dp"
+        android:layout_toEndOf="@id/iv_icon"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:background="@drawable/app_custom_shape_red_circle_white_border_1dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="#212121"
+        android:textSize="10dp"
+        tools:text="主页" />
+
+</RelativeLayout>
