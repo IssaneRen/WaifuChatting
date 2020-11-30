@@ -1,4 +1,4 @@
-package com.lucius.waifuchatting
+package com.lucius.waifuchatting.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.lucius.comm.base.BaseActivity
+import com.lucius.waifuchatting.R
 import com.lucius.waifuchatting.apputil.id2Color
 import com.lucius.waifuchatting.apputil.id2Drawable
 import kotlinx.android.synthetic.main.activity_main.*
@@ -48,7 +49,7 @@ class MainActivity : BaseActivity() {
     // private value -- 链接底部tab的adapter
     private val mPagerAdapter = object : FragmentStatePagerAdapter(supportFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         override fun getItem(position: Int): Fragment {
-            return Fragment() // fixme 暂时写空fragment
+            return mPresenter.fragmentArray.get(position)
         }
 
         override fun getCount(): Int {
