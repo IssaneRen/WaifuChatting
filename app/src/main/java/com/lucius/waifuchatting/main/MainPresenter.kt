@@ -3,6 +3,7 @@ package com.lucius.waifuchatting.main
 import androidx.annotation.DrawableRes
 import androidx.fragment.app.Fragment
 import com.lucius.waifuchatting.R
+import com.lucius.waifuchatting.chatting.ChattingFragment
 
 class MainPresenter {
     var bottomTabArray: MutableList<HomeTabItem> = ArrayList()

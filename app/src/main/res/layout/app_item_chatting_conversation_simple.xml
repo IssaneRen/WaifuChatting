@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:src="@color/black"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_account_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户123"
+            android:textSize="20sp"
+            android:textColor="#212121"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/tv_recent_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:text="我最近发现了一个特别好玩的地方"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
