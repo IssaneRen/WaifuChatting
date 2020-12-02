@@ -1,41 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:background="@drawable/app_bg_ffffff_pressed_f5f5f5_ripple"
+    android:padding="15dp" >
 
-    <ImageView
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:src="@color/black"
-        android:layout_gravity="center_vertical"
-        android:layout_margin="20dp" />
+    <FrameLayout
+        android:id="@+id/fl_avatar_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:padding="1px"
+            android:scaleType="centerCrop"
+            android:src="@color/black" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_msg_count"
+        style="@style/TextViewStyle_RedPoint"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginTop="-8dp"
+        android:layout_alignEnd="@+id/fl_avatar_container"
+        android:layout_alignTop="@+id/fl_avatar_container"
+        android:visibility="gone"
+        android:text="3"
+        tools:visibility="visible"
+        tools:text="99+" />
 
     <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_alignTop="@+id/fl_avatar_container"
+        android:layout_toEndOf="@+id/fl_avatar_container"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="middle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/tv_time"
+                android:layout_marginRight="2dp"
+                android:singleLine="true"
+                android:textColor="#212121"
+                android:textSize="17sp"
+                tools:ignore="InefficientWeight"
+                tools:text="李东楠aaaaaa" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textColor="#B0B0B0"
+                android:textSize="12dp"
+                tools:text="20:24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/tv_account_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="用户123"
-            android:textSize="20sp"
-            android:textColor="#212121"
-            android:layout_marginTop="15dp" />
-
-        <TextView
-            android:id="@+id/tv_recent_msg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#666666"
-            android:text="我最近发现了一个特别好玩的地方"
+            android:id="@+id/tv_organization_and_title"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
             android:layout_marginTop="5dp"
-            android:ellipsize="end" />
+            android:textColor="#666666"
+            android:textSize="13dp"
+            tools:text="PCR | 副团长"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical">
 
+<!--            <TextView-->
+<!--                android:id="@+id/tv_status"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginEnd="3dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:singleLine="true"-->
+<!--                android:textColor="#FF4B31"-->
+<!--                android:textSize="13dp"-->
+<!--                android:visibility="gone"-->
+<!--                tools:visibility="visible"-->
+<!--                android:text="[已送达]"-->
+<!--                android:includeFontPadding="false" />-->
+
+            <TextView
+                android:id="@+id/tv_snd_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="#999999"
+                android:textSize="13dp"
+                android:includeFontPadding="false"
+                android:layout_gravity="center_vertical"
+                tools:text="那就明天见" />
+
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

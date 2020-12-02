@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="waifu_gray_white">#F5F5F5</color>
     <color name="waifu_text_unselected_1">#212121</color>
     <color name="waifu_text_selected_1">#0077FF</color>
 </resources>
